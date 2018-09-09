@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff; -fx-border-color: #80CBC4; -fx-border-width: 2px;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.acm.javafx.invoicesystem.controller.CityMart">
+   <top>
+      <VBox prefHeight="108.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="titleHBox" alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="596.0" style="-fx-background-color: #E0E0E0;" styleClass="handHBox">
+               <children>
+                  <ImageView fx:id="hand" fitHeight="39.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/img.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="titleHand" styleClass="titleHand" text="City Mart" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

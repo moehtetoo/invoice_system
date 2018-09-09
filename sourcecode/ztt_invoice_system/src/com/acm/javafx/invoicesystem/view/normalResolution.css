@@ -1,0 +1,67 @@
+.root{
+    -fx-font-family: Zawgyi-One;
+}
+.table-view .column-header {
+     -fx-background-color: transparent;
+     -fx-cursor: hand ;
+} 
+
+.table-view .column-header-background{
+   /* -fx-background-color: linear-gradient( #757575 0.0%, #9E9E9E 100.0%);*/ 
+}
+
+.table-view .column-header-background .label{
+     -fx-background-color: transparent; 
+    -fx-font-weight:bold;
+    /*-fx-text-fill: white;*/
+    -fx-font-size:13px;  
+}
+
+.table-view .table-column{
+    -fx-alignment:center;
+}
+.table-view .table-cell{
+    -fx-font-weight:bold;
+    -fx-font-size:13px;     
+    -fx-font-family: Zawgyi-One;    
+    /* -fx-text-fill:orange; */
+
+}
+.table-row-cell:hover {
+}
+.table-row-cell:focused {
+    -fx-cursor: hand ;
+}
+.grid{
+	-fx-font-size:12px;
+	-fx-font-family: Zawgyi-One;
+}
+.font-12px{
+	-fx-font-size:12px;
+}
+.bold{
+	-fx-font-weight:bold;
+}
+.font-18px{
+	-fx-font-size:18px;
+}
+.font-24px{
+	-fx-font-size:24px;
+}
+.handHBox{
+	-fx-font-size:11px;
+}
+.gridAddItem{
+	-fx-font-size:13px;
+	-fx-font-family: Zawgyi-One;
+}
+.addHeader{
+	-fx-font-size:30px;
+}
+.titleHand{
+	-fx-font-size:11px;
+}
+.focus-btn{
+	-fx-background-radius: 0;
+	-fx-font-size:13;
+}

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="bPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff; -fx-border-color: #80CBC4; -fx-border-width: 2px;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.acm.javafx.invoicesystem.controller.Others">
+   <top>
+      <VBox fx:id="vBox" prefHeight="209.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="handHBox" alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="600.0" style="-fx-background-color: #E0E0E0;">
+               <children>
+                  <ImageView id="hand" fx:id="hand" fitHeight="36.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/img.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="header" styleClass="titleHand" />
+               </children>
+            </HBox>
+            <GridPane fx:id="gPane" hgap="10.0" styleClass="grid">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="customerName" GridPane.rowIndex="1" />
+                  <TextField fx:id="address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="phone" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="voucherNo" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <DatePicker fx:id="date" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></DatePicker>
+                  <ComboBox fx:id="discountType" prefWidth="150.0" promptText="Select One" GridPane.rowIndex="4">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
+                  <TextField fx:id="discountValue" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <children>
+                        <JFXRadioButton fx:id="cash" selected="true" style="-jfx-selected-color: #00ACC1;" text="Cash">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="payment" />
+                           </toggleGroup>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="credit" style="-jfx-selected-color: #00ACC1;" text="Credit" toggleGroup="$payment">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="consign" style="-jfx-selected-color: #00ACC1;" text="Consign" toggleGroup="$payment">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXRadioButton>
+                     </children>
+                  </HBox>
+                  <ComboBox fx:id="creditTerms" prefWidth="150.0" promptText="Select One" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
+                     <TextField fx:id="paymentInput" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                      <DatePicker fx:id="dueDate" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </DatePicker>
+					 <TextArea fx:id="remarks" prefHeight="48.0" prefWidth="137.0" promptText="Enter remarks ....." GridPane.columnSpan="2" GridPane.rowIndex="7" GridPane.rowSpan="3" />
+                     
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="9">
+                     <children>
+                        <GridPane hgap="8.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXButton fx:id="addItems" buttonType="RAISED" onAction="#addItems" style="-fx-background-color: #00ACC1;" text="Add Invoice Item" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <JFXButton fx:id="print" alignment="CENTER" buttonType="RAISED" style="-fx-background-color: #00ACC1;" text="Print" textFill="WHITE" GridPane.columnIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1">
+                                 <children>
+                                    <JFXButton fx:id="preview" alignment="CENTER" buttonType="RAISED" style="-fx-background-color: #00ACC1;" text="Preview" textFill="WHITE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <JFXButton fx:id="clean" buttonType="RAISED" onAction="#cleanAll" style="-fx-background-color: #00ACC1;" text="Clean All" textFill="WHITE" GridPane.columnIndex="3">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <HBox alignment="BOTTOM_LEFT">
+                     <children>
+                        <Label text="Customer Name" />
+                        <Label text=" *" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="Address" />
+                        <Label text=" *" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" GridPane.columnIndex="2">
+                     <children>
+                        <Label text="Phone" />
+                        <Label text=" *" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  
+                  <HBox alignment="BOTTOM_LEFT" GridPane.columnIndex="4">
+                     <children>
+                        <Label text="Date" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" GridPane.rowIndex="3">
+                     <children>
+                        <Label text="Discount Type" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Label text="Discount Value" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hboxCreditTerms" alignment="BOTTOM_LEFT" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <children>
+                        <Label fx:id="paymentLabel" />
+                        <Label text=" *" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" GridPane.rowIndex="6">
+                     <children>
+                        <Label alignment="BOTTOM_LEFT" text="Remarks" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="11.0" prefWidth="138.0" GridPane.columnIndex="3">
+                     <children>
+                        <Label text="Voucher No" />
+                        <Label text=" *" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <HBox GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <Label fx:id="discountError" alignment="TOP_LEFT" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="phoneError" alignment="TOP_LEFT" textFill="#e44d0d" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <HBox alignment="BOTTOM_CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <children>
+                        <Label alignment="BOTTOM_LEFT" text="Terms" />
+                     </children>
+                  </HBox>
+                  
+                  <HBox fx:id="paymentHBox" alignment="CENTER_LEFT" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <children>
+                        <Label fx:id="othersPayment" alignment="BOTTOM_LEFT" />
+                        <Label text="*" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <HBox GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="customerNameError" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="addressError" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <HBox GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="voucherError" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <HBox GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <children>
+                        <Label fx:id="paymentSelectError" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <HBox GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <children>
+                        <Label fx:id="paymentInputError" textFill="#e44d0d" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <children>
+                        <Label text="Due Date" />
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </VBox>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="oItems" prefHeight="191.0" prefWidth="433.0">
+              <columns>
+                <TableColumn fx:id="itemNoCol" text="No.">
+                </TableColumn>
+                <TableColumn fx:id="itemNameCol" text="Item Name">
+                </TableColumn>
+                  <TableColumn fx:id="qtyCol" text="Qty">
+                  </TableColumn>
+                  <TableColumn fx:id="priceCol" text="Price">
+                  </TableColumn>
+                  <TableColumn fx:id="discountCol" prefWidth="75.0" text="Discount" />
+                  <TableColumn fx:id="amountCol" text="Amount">
+                  </TableColumn>
+                  <TableColumn fx:id="actionCol" text="Action" />
+              </columns>
+            </TableView>
+            <VBox fx:id="totalVBox" prefHeight="191.0" prefWidth="166.0" style="-fx-border-color: #80CBC4; -fx-border-radius: 5px; -fx-border-width: 0.5;">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <children>
+                  <Label text="Total Amount">
+                     <styleClass>
+                        <String fx:value="font-18px" />
+                        <String fx:value="bold" />
+                     </styleClass></Label>
+                  <HBox fx:id="totalHBox" alignment="CENTER_RIGHT" style="-fx-background-color: #E0F2F1; -fx-background-radius: 5px;">
+                     <children>
+                        <Label fx:id="totalAmount" textFill="RED">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="font-18px" />
+                              <String fx:value="bold" />
+                           </styleClass></Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="font-18px" />
+                        <String fx:value="bold" />
+                     </styleClass>
+                  </HBox>
+                  <Label text="Discount Amount">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="font-18px" />
+                        <String fx:value="bold" />
+                     </styleClass>
+                  </Label>
+                  <HBox fx:id="discountHBox" alignment="CENTER_RIGHT" style="-fx-background-color: #E0F2F1; -fx-background-radius: 5px;">
+                     <children>
+                        <Label fx:id="discount" textFill="RED">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="font-18px" />
+                              <String fx:value="bold" />
+                           </styleClass></Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="font-18px" />
+                        <String fx:value="bold" />
+                     </styleClass>
+                  </HBox>
+                  <Label text="Balance To Pay">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="font-24px" />
+                        <String fx:value="bold" />
+                     </styleClass>
+                  </Label>
+                  <HBox fx:id="btpHBox" alignment="CENTER_RIGHT" style="-fx-background-color: #E0F2F1; -fx-background-radius: 5px;">
+                     <children>
+                        <Label fx:id="btp" textFill="RED">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="font-24px" />
+                              <String fx:value="bold" />
+                           </styleClass></Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="font-18px" />
+                        <String fx:value="bold" />
+                     </styleClass>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+   </center>
+</BorderPane>
